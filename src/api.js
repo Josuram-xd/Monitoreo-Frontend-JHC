@@ -18,6 +18,10 @@ export function getLogs(filters = {}) {
   return request(`/api/metrics/logs${query ? `?${query}` : ''}`);
 }
 
+export function clearLogs() {
+  return request('/api/metrics/logs', { method: 'DELETE' });
+}
+
 export function simulateLoad() {
   return request('/api/metrics/simulate-load', { method: 'POST' });
 }
